@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Student Portal</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f7fb;
+            min-height: 100vh;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 800px;
+            text-align: center;
+        }
+
+        .header {
+            margin-bottom: 35px;
+        }
+
+        .header h1 {
+            font-size: 42px;
+            color: #1e3a8a;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            color: #666;
+            font-size: 17px;
+        }
+
+        .portal {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+        }
+
+        .card {
+            background: white;
+            padding: 30px;
+            border-radius: 14px;
+
+            box-shadow:
+                0 5px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        .card h2 {
+            margin-bottom: 10px;
+        }
+
+        .card p {
+            color: #666;
+            margin-bottom: 25px;
+        }
+
+        .button {
+            display: block;
+            text-decoration: none;
+            padding: 12px;
+            border-radius: 7px;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        .primary {
+            background: #1e3a8a;
+            color: white;
+        }
+
+        .primary:hover {
+            background: #172d6b;
+        }
+
+        .secondary {
+            background: #e5e7eb;
+            color: #222;
+        }
+
+        .secondary:hover {
+            background: #d1d5db;
+        }
+
+        @media (max-width: 650px) {
+
+            .portal {
+                grid-template-columns: 1fr;
+            }
+
+            .header h1 {
+                font-size: 32px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <div class="container">
+
+
+        <div class="header">
+
+            <h1>Student Portal</h1>
+
+            <p>
+                Student registration and leave management system
+            </p>
+
+        </div>
+
+
+        <div class="portal">
+
+
+            <!-- Student -->
+
+            <div class="card">
+
+                <h2>🎓 Student</h2>
+
+                <p>
+                    Register or login to access your student portal.
+                </p>
+
+                <a
+                    href="/student-register"
+                    class="button primary"
+                >
+                    Register as Student
+                </a>
+
+                <a
+                    href="/login"
+                    class="button secondary"
+                >
+                    Student Login
+                </a>
+
+            </div>
+
+
+            <!-- Admin -->
+
+            <div class="card">
+
+                <h2>🛠️ Admin</h2>
+
+                <p>
+                    Manage students and review leave requests.
+                </p>
+
+                <a
+                    href="/admin-register"
+                    class="button primary"
+                >
+                    Register as Admin
+                </a>
+
+                <a
+                    href="/admin-login"
+                    class="button secondary"
+                >
+                    Admin Login
+                </a>
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+
+</body>
+
+</html>

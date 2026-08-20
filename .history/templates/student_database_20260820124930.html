@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Student Database</title>
+
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+        }
+
+        body{
+            background:#e8e5d8;
+            color:#20251d;
+            font-family:"Courier New", monospace;
+            min-height:100vh;
+            padding:25px;
+        }
+
+        .terminal{
+            width:100%;
+            max-width:1200px;
+            margin:auto;
+            background:#eeeadd;
+            border:2px solid #20251d;
+            box-shadow:8px 8px 0 #20251d;
+        }
+
+        .header{
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+            padding:14px 18px;
+            border-bottom:2px solid #20251d;
+            font-size:12px;
+        }
+
+        .content{
+            padding:35px;
+        }
+
+        .code{
+            font-size:11px;
+            opacity:.6;
+            margin-bottom:20px;
+            letter-spacing:1px;
+        }
+
+        h1{
+            font-size:34px;
+            margin-bottom:8px;
+            letter-spacing:-1px;
+        }
+
+        .subtitle{
+            color:#555;
+            font-size:13px;
+            margin-bottom:25px;
+        }
+
+        .stats{
+            display:grid;
+            grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+            gap:15px;
+            margin-bottom:30px;
+        }
+
+        .stat-card{
+            border:2px solid #20251d;
+            padding:18px;
+            background:#f6f3e8;
+        }
+
+        .stat-label{
+            font-size:10px;
+            opacity:.6;
+            margin-bottom:10px;
+            letter-spacing:1px;
+        }
+
+        .stat-value{
+            font-size:28px;
+            font-weight:bold;
+        }
+
+        table{
+            width:100%;
+            border-collapse:collapse;
+            font-size:13px;
+        }
+
+        th{
+            text-align:left;
+            border-bottom:2px solid #20251d;
+            padding:12px 10px;
+            font-size:11px;
+            letter-spacing:1px;
+            background:#e6e2d5;
+        }
+
+        td{
+            padding:14px 10px;
+            border-bottom:1px dashed #8b8676;
+        }
+
+        tr:hover{
+            background:#f7f4ea;
+        }
+
+        .student-id{
+            font-weight:bold;
+        }
+
+        .button{
+            text-decoration:none;
+            border:1px solid #20251d;
+            color:#20251d;
+            padding:6px 10px;
+            font-size:11px;
+            display:inline-block;
+            transition:.15s;
+        }
+
+        .button:hover{
+            background:#20251d;
+            color:#eeeadd;
+        }
+
+        .footer{
+            border-top:2px solid #20251d;
+            padding:12px 18px;
+            display:flex;
+            justify-content:space-between;
+            font-size:10px;
+        }
+
+        @media(max-width:700px){
+            table{
+                display:block;
+                overflow-x:auto;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+
+<div class="terminal">
+
+    <div class="header">
+        <span>CAMPUS TERMINAL</span>
+        <span>[ STUDENT DATABASE ]</span>
+    </div>
+
+    <div class="content">
+
+        <div class="code">
+            DATABASE / STUDENTS / RECORDS
+        </div>
+
+        <h1>REGISTERED STUDENTS</h1>
+
+        <p class="subtitle">
+            View every student registered in the Campus Management System.
+        </p>
+
+        <div class="stats">
+            <div class="stat-card">
+                <div class="stat-label">TOTAL STUDENTS</div>
+                <div style="display:flex; gap:10px; margin-bottom:25px; flex-wrap:wrap;">
+
+    <form
+        method="POST"
+        action="/delete-all-students"
+        onsubmit="return confirm('Delete ALL student profiles and their leave records? This cannot be undone.');"
+    >
+        <button type="submit" class="button">
+            [ DELETE ALL STUDENT PROFILES ]
+        </button>
+    </form>
+
+</div>
+                <div class="stat-value">{{ students|length }}</div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-label">DATABASE STATUS</div>
+                <div class="stat-value" style="font-size:20px;">ONLINE</div>
+            </div>
+        </div>
+
+        <table>
+
+            <tr>
+                <th>STUDENT ID</th>
+                <th>NAME</th>
+                <th>DOB</th>
+                <th>COURSE</th>
+                <th>EMAIL</th>
+                <th>PROFILE</th>
+            </tr>
+
+            {% for student in students %}
+            <tr>
+                <td class="student-id">
+                    STU{{ "%04d" % student[0] }}
+                </td>
+
+                <td>{{ student[1] }}</td>
+                <td>{{ student[2] }}</td>
+                <td>{{ student[3] }}</td>
+                <td>{{ student[4] }}</td>
+
+                <td>
+                    <a href="/student-profile/{{ student[0] }}" class="button">
+                        VIEW RECORD
+                    </a>
+                </td>
+            </tr>
+            {% endfor %}
+
+        </table>
+
+        <br>
+
+        <a href="/admin-dashboard" class="button">
+            ← ADMIN DASHBOARD
+        </a>
+
+    </div>
+
+    <div class="footer">
+        <span>DATABASE CONNECTED</span>
+        <span>CAMPUS_SYS.EXE</span>
+    </div>
+
+</div>
+
+</body>
+</html>

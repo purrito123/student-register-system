@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Admin Dashboard</title>
+</head>
+
+<body>
+
+    <h1>Admin Dashboard</h1>
+
+    <h2>Leave Requests</h2>
+
+    {% if leaves %}
+
+        {% for leave in leaves %}
+
+            <hr>
+
+            <p><strong>Student Name:</strong> {{ leave[1] }}</p>
+
+            <p><strong>Start Date:</strong> {{ leave[2] }}</p>
+
+            <p><strong>End Date:</strong> {{ leave[3] }}</p>
+
+            <p><strong>Reason:</strong> {{ leave[4] }}</p>
+
+            <p><strong>Status:</strong> {{ leave[5] }}</p>
+
+        {% endfor %}
+
+    {% else %}
+
+        <p>No leave requests found.</p>
+
+    {% endif %}
+
+</body>
+
+</html>

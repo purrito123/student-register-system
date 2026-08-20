@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Campus Terminal</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background: #e8e5d8;
+            color: #20251d;
+            font-family: "Courier New", monospace;
+
+            min-height: 100vh;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            padding: 25px;
+        }
+
+
+        .terminal {
+            width: 100%;
+            max-width: 900px;
+
+            border: 2px solid #20251d;
+
+            background: #eeeadd;
+
+            box-shadow: 8px 8px 0 #20251d;
+        }
+
+
+        /* Header */
+
+        .header {
+            border-bottom: 2px solid #20251d;
+
+            padding: 15px 20px;
+
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .header-left {
+            font-weight: bold;
+        }
+
+        .header-right {
+            font-size: 12px;
+        }
+
+
+        /* Main */
+
+        .content {
+            padding: 55px;
+        }
+
+
+        .label {
+            font-size: 12px;
+
+            letter-spacing: 2px;
+
+            margin-bottom: 15px;
+        }
+
+
+        h1 {
+            font-size: clamp(32px, 6vw, 60px);
+
+            line-height: 1;
+
+            letter-spacing: -2px;
+
+            margin-bottom: 20px;
+        }
+
+
+        .description {
+            max-width: 600px;
+
+            font-size: 14px;
+
+            line-height: 1.7;
+
+            margin-bottom: 45px;
+        }
+
+
+        /* Portal */
+
+        .portals {
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            border-top: 2px solid #20251d;
+            border-left: 2px solid #20251d;
+        }
+
+
+        .portal {
+            padding: 30px;
+
+            min-height: 220px;
+
+            border-right: 2px solid #20251d;
+            border-bottom: 2px solid #20251d;
+        }
+
+
+        .portal-number {
+            font-size: 11px;
+
+            margin-bottom: 35px;
+
+            opacity: 0.6;
+        }
+
+
+        .portal h2 {
+            font-size: 22px;
+
+            margin-bottom: 10px;
+        }
+
+
+        .portal p {
+            font-size: 13px;
+
+            line-height: 1.6;
+
+            margin-bottom: 25px;
+        }
+
+
+        /* Buttons */
+
+        .buttons {
+            display: flex;
+
+            gap: 10px;
+        }
+
+
+        .button {
+            font-family: "Courier New", monospace;
+
+            font-size: 12px;
+
+            text-decoration: none;
+
+            color: #20251d;
+
+            border: 1px solid #20251d;
+
+            padding: 9px 14px;
+
+            transition: 0.15s;
+        }
+
+
+        .button:hover {
+            background: #20251d;
+
+            color: #eeeadd;
+        }
+
+
+        /* Footer */
+
+        .footer {
+            border-top: 2px solid #20251d;
+
+            padding: 12px 20px;
+
+            display: flex;
+
+            justify-content: space-between;
+
+            font-size: 10px;
+
+            letter-spacing: 1px;
+        }
+
+
+        /* Mobile */
+
+        @media (max-width: 650px) {
+
+            .content {
+                padding: 30px;
+            }
+
+            .portals {
+                grid-template-columns: 1fr;
+            }
+
+            .portal {
+                border-right: 2px solid #20251d;
+            }
+
+            .footer {
+                flex-direction: column;
+
+                gap: 6px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <div class="terminal">
+
+
+        <!-- Header -->
+
+        <div class="header">
+
+            <div class="header-left">
+                CAMPUS TERMINAL
+            </div>
+
+            <div class="header-right">
+                [ SYSTEM 01.0 ]
+            </div>
+
+        </div>
+
+
+        <!-- Main -->
+
+        <div class="content">
+
+
+            <div class="label">
+                UNIVERSITY MANAGEMENT SYSTEM
+            </div>
+
+
+            <h1>
+                STUDENT<br>
+                REGISTRATION
+            </h1>
+
+
+            <p class="description">
+                Registration, authentication and leave management
+                for students and administration.
+            </p>
+
+
+            <!-- Portals -->
+
+            <div class="portals">
+
+
+                <!-- Student -->
+
+                <div class="portal">
+
+                    <div class="portal-number">
+                        01 / STUDENT
+                    </div>
+
+                    <h2>
+                        Student Portal
+                    </h2>
+
+                    <p>
+                        Register your account, access your profile
+                        and manage leave requests.
+                    </p>
+
+
+                    <div class="buttons">
+
+                        <a
+                            href="/student-register"
+                            class="button"
+                        >
+                            REGISTER
+                        </a>
+
+                        <a
+                            href="/login"
+                            class="button"
+                        >
+                            LOGIN
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Admin -->
+
+                <div class="portal">
+
+                    <div class="portal-number">
+                        02 / ADMIN
+                    </div>
+
+                    <h2>
+                        Administration
+                    </h2>
+
+                    <p>
+                        Manage student accounts and review
+                        incoming leave applications.
+                    </p>
+
+
+                    <div class="buttons">
+
+                        <a
+                            href="/admin-register"
+                            class="button"
+                        >
+                            REGISTER
+                        </a>
+
+                        <a
+                            href="/admin-login"
+                            class="button"
+                        >
+                            LOGIN
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+
+        <!-- Footer -->
+
+        <div class="footer">
+
+            <span>
+                STATUS: ONLINE
+            </span>
+
+            <span>
+                CAMPUS_SYS.EXE
+            </span>
+
+        </div>
+
+
+    </div>
+
+
+</body>
+
+</html>

@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Admin Login</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background: #e8e5d8;
+            color: #20251d;
+            font-family: "Courier New", monospace;
+
+            min-height: 100vh;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            padding: 25px;
+        }
+
+
+        .terminal {
+            width: 100%;
+            max-width: 500px;
+
+            background: #eeeadd;
+
+            border: 2px solid #20251d;
+
+            box-shadow: 8px 8px 0 #20251d;
+        }
+
+
+        .header {
+            padding: 14px 18px;
+
+            border-bottom: 2px solid #20251d;
+
+            display: flex;
+            justify-content: space-between;
+
+            font-size: 12px;
+        }
+
+
+        .content {
+            padding: 40px;
+        }
+
+
+        .number {
+            font-size: 11px;
+
+            opacity: 0.6;
+
+            margin-bottom: 25px;
+        }
+
+
+        h1 {
+            font-size: 32px;
+
+            margin-bottom: 10px;
+        }
+
+
+        .description {
+            font-size: 13px;
+
+            line-height: 1.6;
+
+            color: #555;
+
+            margin-bottom: 30px;
+        }
+
+
+        label {
+            display: block;
+
+            font-size: 12px;
+
+            margin-bottom: 7px;
+        }
+
+
+        input {
+            width: 100%;
+
+            padding: 12px;
+
+            margin-bottom: 20px;
+
+            background: #f5f2e7;
+
+            border: 1px solid #20251d;
+
+            color: #20251d;
+
+            font-family: "Courier New", monospace;
+
+            font-size: 14px;
+
+            outline: none;
+        }
+
+
+        input:focus {
+            background: white;
+
+            box-shadow: 3px 3px 0 #20251d;
+        }
+
+
+        button {
+            width: 100%;
+
+            padding: 12px;
+
+            background: #20251d;
+
+            color: #eeeadd;
+
+            border: 2px solid #20251d;
+
+            font-family: "Courier New", monospace;
+
+            font-size: 13px;
+
+            cursor: pointer;
+
+            transition: 0.15s;
+        }
+
+
+        button:hover {
+            background: #eeeadd;
+
+            color: #20251d;
+        }
+
+
+        .warning {
+            font-size: 11px;
+
+            line-height: 1.6;
+
+            margin-top: 20px;
+
+            padding: 12px;
+
+            border: 1px dashed #20251d;
+        }
+
+
+        .bottom {
+            border-top: 2px solid #20251d;
+
+            padding: 15px 18px;
+
+            font-size: 11px;
+        }
+
+
+        .bottom a {
+            color: #20251d;
+
+            text-decoration: none;
+
+            border-bottom: 1px solid #20251d;
+        }
+
+
+        @media (max-width: 500px) {
+
+            .content {
+                padding: 30px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <div class="terminal">
+
+
+        <div class="header">
+
+            <span>
+                CAMPUS TERMINAL
+            </span>
+
+            <span>
+                [ ADMIN LOGIN ]
+            </span>
+
+        </div>
+
+
+        <div class="content">
+
+
+            <div class="number">
+                02 / ADMINISTRATION ACCESS
+            </div>
+
+
+            <h1>
+                ADMIN LOGIN
+            </h1>
+
+
+            <p class="description">
+                Authorized personnel only.
+                Enter your administrative credentials
+                to access the management portal.
+            </p>
+
+
+            <form method="POST" action="/admin-login">
+
+
+                <label for="email">
+                    ADMIN EMAIL
+                </label>
+
+                <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="admin@college.edu"
+                    required
+                >
+
+
+                <label for="password">
+                    PASSWORD
+                </label>
+
+                <input
+                    type="password"
+                    id="password"
+                    name="password"
+                    placeholder="••••••••"
+                    required
+                >
+
+
+                <button type="submit">
+                    [ ENTER ADMIN SYSTEM ]
+                </button>
+
+
+            </form>
+
+
+            <div class="warning">
+
+                RESTRICTED ACCESS:
+                This area is intended for
+                authorized administration accounts.
+
+            </div>
+
+
+        </div>
+
+
+        <div class="bottom">
+
+            NEW ADMIN?
+
+            <a href="/admin-register">
+                CREATE ACCOUNT →
+            </a>
+
+        </div>
+
+
+    </div>
+
+
+</body>
+
+</html>

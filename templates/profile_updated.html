@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Profile Updated</title>
+
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box;}
+
+        body{
+            background:#e8e5d8;
+            color:#20251d;
+            font-family:"Courier New", monospace;
+            min-height:100vh;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            padding:25px;
+        }
+
+        .terminal{
+            width:100%;
+            max-width:620px;
+            background:#eeeadd;
+            border:2px solid #20251d;
+            box-shadow:8px 8px 0 #20251d;
+        }
+
+        .header{
+            display:flex;
+            justify-content:space-between;
+            padding:14px 18px;
+            border-bottom:2px solid #20251d;
+            font-size:12px;
+        }
+
+        .content{
+            padding:45px 35px;
+            text-align:center;
+        }
+
+        .code{
+            font-size:11px;
+            opacity:.6;
+            margin-bottom:25px;
+        }
+
+        .check{
+            font-size:50px;
+            margin-bottom:20px;
+        }
+
+        h1{
+            font-size:30px;
+            margin-bottom:15px;
+        }
+
+        p{
+            color:#555;
+            line-height:1.7;
+            font-size:13px;
+            margin-bottom:30px;
+        }
+
+        .status{
+            display:inline-block;
+            border:1px solid #20251d;
+            padding:8px 14px;
+            font-size:11px;
+            margin-bottom:30px;
+        }
+
+        .buttons{
+            display:flex;
+            justify-content:center;
+            gap:10px;
+            flex-wrap:wrap;
+        }
+
+        .button{
+            text-decoration:none;
+            border:1px solid #20251d;
+            padding:10px 16px;
+            color:#20251d;
+            font-size:11px;
+        }
+
+        .button:hover{
+            background:#20251d;
+            color:#eeeadd;
+        }
+
+        .primary{
+            background:#20251d;
+            color:#eeeadd;
+        }
+
+        .primary:hover{
+            background:#eeeadd;
+            color:#20251d;
+        }
+
+        .footer{
+            border-top:2px solid #20251d;
+            padding:12px 18px;
+            display:flex;
+            justify-content:space-between;
+            font-size:10px;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="terminal">
+
+    <div class="header">
+        <span>CAMPUS TERMINAL</span>
+        <span>[ PROFILE UPDATE ]</span>
+    </div>
+
+    <div class="content">
+
+        <div class="code">
+            STUDENT / PROFILE / UPDATED
+        </div>
+
+        <div class="check">
+            [ OK ]
+        </div>
+
+        <h1>PROFILE UPDATED</h1>
+
+        <p>
+            Your registration information has been successfully saved to the Campus Management System.
+        </p>
+
+        <div class="status">
+            DATABASE STATUS: SYNCHRONIZED
+        </div>
+
+        <div class="buttons">
+
+            <a href="/student-dashboard" class="button primary">
+                [ DASHBOARD ]
+            </a>
+
+            <a href="/edit-profile" class="button">
+                [ EDIT AGAIN ]
+            </a>
+
+            <a href="/" class="button">
+                [ HOME ]
+            </a>
+
+        </div>
+
+    </div>
+
+    <div class="footer">
+        <span>PROFILE DATABASE CONNECTED</span>
+        <span>CAMPUS_SYS.EXE</span>
+    </div>
+
+</div>
+
+</body>
+</html>

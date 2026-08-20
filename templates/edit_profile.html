@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Edit Profile</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #e8e5d8;
+            color: #20251d;
+            font-family: "Courier New", monospace;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 25px;
+        }
+
+        .terminal {
+            width: 100%;
+            max-width: 650px;
+            background: #eeeadd;
+            border: 2px solid #20251d;
+            box-shadow: 8px 8px 0 #20251d;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            padding: 14px 18px;
+            border-bottom: 2px solid #20251d;
+            font-size: 12px;
+        }
+
+        .content {
+            padding: 35px;
+        }
+
+        .code {
+            font-size: 11px;
+            opacity: .6;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: 32px;
+            margin-bottom: 8px;
+        }
+
+        .subtitle {
+            color: #555;
+            font-size: 13px;
+            margin-bottom: 30px;
+        }
+
+        label {
+            display: block;
+            font-size: 12px;
+            margin-bottom: 8px;
+            margin-top: 15px;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #20251d;
+            background: #f6f3e8;
+            font-family: "Courier New", monospace;
+            font-size: 13px;
+            outline: none;
+        }
+
+        input:focus {
+            background: white;
+            box-shadow: 3px 3px 0 #20251d;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+
+        button,
+        .button {
+            padding: 11px 16px;
+            border: 1px solid #20251d;
+            background: #20251d;
+            color: #eeeadd;
+            text-decoration: none;
+            font-family: "Courier New", monospace;
+            font-size: 12px;
+            cursor: pointer;
+        }
+
+        button:hover,
+        .button:hover {
+            background: #eeeadd;
+            color: #20251d;
+        }
+
+        .secondary {
+            background: #f6f3e8;
+            color: #20251d;
+        }
+
+        .footer {
+            border-top: 2px solid #20251d;
+            padding: 12px 18px;
+            display: flex;
+            justify-content: space-between;
+            font-size: 10px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+<div class="terminal">
+
+    <div class="header">
+        <span>CAMPUS TERMINAL</span>
+        <span>[ EDIT PROFILE ]</span>
+    </div>
+
+    <div class="content">
+
+        <div class="code">
+            STUDENT / PROFILE / UPDATE
+        </div>
+
+        <h1>EDIT YOUR PROFILE</h1>
+
+        <p class="subtitle">
+            Update your registration information below.
+        </p>
+
+        <form method="POST">
+
+            <label>FULL NAME</label>
+            <input
+                type="text"
+                name="name"
+                value="{{ student[1] }}"
+                required
+            >
+
+            <label>DATE OF BIRTH</label>
+            <input
+                type="date"
+                name="dob"
+                value="{{ student[2] }}"
+                required
+            >
+
+            <label>COURSE</label>
+            <input
+                type="text"
+                name="course"
+                value="{{ student[3] }}"
+                required
+            >
+
+            <label>EMAIL ADDRESS</label>
+            <input
+                type="email"
+                name="email"
+                value="{{ student[4] }}"
+                required
+            >
+
+            <div class="buttons">
+
+                <button type="submit">
+                    [ SAVE CHANGES ]
+                </button>
+
+                <a href="/student-dashboard" class="button secondary">
+                    [ CANCEL ]
+                </a>
+
+            </div>
+
+        </form>
+
+    </div>
+
+    <div class="footer">
+        <span>PROFILE DATABASE CONNECTED</span>
+        <span>CAMPUS_SYS.EXE</span>
+    </div>
+
+</div>
+
+</body>
+</html>

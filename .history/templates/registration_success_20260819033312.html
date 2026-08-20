@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Registration Complete</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background: #e8e5d8;
+            color: #20251d;
+            font-family: "Courier New", monospace;
+
+            min-height: 100vh;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            padding: 25px;
+        }
+
+        .terminal {
+            width: 100%;
+            max-width: 600px;
+
+            background: #eeeadd;
+
+            border: 2px solid #20251d;
+
+            box-shadow: 8px 8px 0 #20251d;
+        }
+
+        /* HEADER */
+
+        .header {
+            padding: 14px 18px;
+
+            border-bottom: 2px solid #20251d;
+
+            display: flex;
+            justify-content: space-between;
+
+            font-size: 12px;
+        }
+
+        /* CONTENT */
+
+        .content {
+            padding: 50px 40px;
+
+            text-align: center;
+        }
+
+        .code {
+            font-size: 11px;
+
+            opacity: 0.6;
+
+            margin-bottom: 30px;
+        }
+
+        .check {
+            font-size: 50px;
+
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: 30px;
+
+            margin-bottom: 15px;
+        }
+
+        .message {
+            font-size: 13px;
+
+            line-height: 1.7;
+
+            color: #555;
+
+            max-width: 430px;
+
+            margin: 0 auto 25px;
+        }
+
+        /* STATUS */
+
+        .status {
+            display: inline-block;
+
+            border: 1px solid #20251d;
+
+            padding: 8px 15px;
+
+            font-size: 11px;
+
+            margin-bottom: 30px;
+        }
+
+        /* BUTTONS */
+
+        .buttons {
+            display: flex;
+
+            justify-content: center;
+
+            gap: 10px;
+        }
+
+        .button {
+            display: inline-block;
+
+            padding: 10px 18px;
+
+            border: 1px solid #20251d;
+
+            color: #20251d;
+
+            text-decoration: none;
+
+            font-size: 11px;
+
+            transition: 0.15s;
+        }
+
+        .button:hover {
+            background: #20251d;
+
+            color: #eeeadd;
+        }
+
+        .primary {
+            background: #20251d;
+
+            color: #eeeadd;
+        }
+
+        .primary:hover {
+            background: #eeeadd;
+
+            color: #20251d;
+        }
+
+        /* FOOTER */
+
+        .footer {
+            border-top: 2px solid #20251d;
+
+            padding: 12px 18px;
+
+            display: flex;
+
+            justify-content: space-between;
+
+            font-size: 10px;
+        }
+
+        @media (max-width: 500px) {
+
+            .content {
+                padding: 40px 25px;
+            }
+
+            .buttons {
+                flex-direction: column;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <div class="terminal">
+
+
+        <!-- HEADER -->
+
+        <div class="header">
+
+            <span>
+                CAMPUS TERMINAL
+            </span>
+
+            <span>
+                [ REGISTRATION ]
+            </span>
+
+        </div>
+
+
+        <!-- CONTENT -->
+
+        <div class="content">
+
+
+            <div class="code">
+                00 / SYSTEM / REGISTRATION
+            </div>
+
+
+            <div class="check">
+                [ OK ]
+            </div>
+
+
+            <h1>
+                REGISTRATION COMPLETE
+            </h1>
+
+
+            <p class="message">
+                Your student account has been
+                successfully created and added
+                to the campus system.
+            </p>
+
+
+            <div class="status">
+                ACCOUNT STATUS: ACTIVE
+            </div>
+
+
+            <div class="buttons">
+
+
+                <a
+                    href="/login"
+                    class="button primary"
+                >
+                    [ LOGIN ]
+                </a>
+
+
+                <a
+                    href="/"
+                    class="button"
+                >
+                    [ HOME ]
+                </a>
+
+
+            </div>
+
+
+        </div>
+
+
+        <!-- FOOTER -->
+
+        <div class="footer">
+
+            <span>
+                REGISTRATION: COMPLETE
+            </span>
+
+            <span>
+                CAMPUS_SYS.EXE
+            </span>
+
+        </div>
+
+
+    </div>
+
+
+</body>
+
+</html>

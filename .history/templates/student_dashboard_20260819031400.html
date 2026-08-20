@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Student Dashboard</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background: #e8e5d8;
+            color: #20251d;
+            font-family: "Courier New", monospace;
+            min-height: 100vh;
+            padding: 25px;
+        }
+
+        .terminal {
+            width: 100%;
+            max-width: 1000px;
+            margin: auto;
+
+            background: #eeeadd;
+
+            border: 2px solid #20251d;
+
+            box-shadow: 8px 8px 0 #20251d;
+        }
+
+        /* HEADER */
+
+        .header {
+            padding: 14px 18px;
+
+            border-bottom: 2px solid #20251d;
+
+            display: flex;
+            justify-content: space-between;
+
+            font-size: 12px;
+        }
+
+        .logout {
+            color: #20251d;
+            text-decoration: none;
+        }
+
+        .logout:hover {
+            text-decoration: underline;
+        }
+
+        /* CONTENT */
+
+        .content {
+            padding: 40px;
+        }
+
+        .number {
+            font-size: 11px;
+            opacity: 0.6;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            color: #555;
+            font-size: 13px;
+            margin-bottom: 40px;
+        }
+
+        /* INFO */
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+
+            border-top: 2px solid #20251d;
+            border-left: 2px solid #20251d;
+
+            margin-bottom: 40px;
+        }
+
+        .info {
+            padding: 20px;
+
+            border-right: 2px solid #20251d;
+            border-bottom: 2px solid #20251d;
+        }
+
+        .label {
+            font-size: 10px;
+            opacity: 0.6;
+            margin-bottom: 8px;
+        }
+
+        .value {
+            font-size: 15px;
+        }
+
+        /* LEAVE */
+
+        .section-title {
+            font-size: 12px;
+            letter-spacing: 1px;
+
+            margin-bottom: 15px;
+        }
+
+        .leave-box {
+            border: 2px solid #20251d;
+            padding: 25px;
+
+            margin-bottom: 20px;
+        }
+
+        .leave-box p {
+            font-size: 13px;
+            line-height: 1.7;
+            margin-bottom: 10px;
+        }
+
+        .status {
+            display: inline-block;
+
+            border: 1px solid #20251d;
+
+            padding: 5px 10px;
+
+            font-size: 11px;
+        }
+
+        .apply {
+            display: inline-block;
+
+            margin-top: 10px;
+
+            padding: 10px 15px;
+
+            background: #20251d;
+
+            color: #eeeadd;
+
+            text-decoration: none;
+
+            font-size: 12px;
+        }
+
+        .apply:hover {
+            background: #eeeadd;
+            color: #20251d;
+            border: 1px solid #20251d;
+        }
+
+        /* FOOTER */
+
+        .footer {
+            border-top: 2px solid #20251d;
+
+            padding: 12px 18px;
+
+            display: flex;
+            justify-content: space-between;
+
+            font-size: 10px;
+        }
+
+        @media (max-width: 650px) {
+
+            .content {
+                padding: 30px;
+            }
+
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer {
+                flex-direction: column;
+                gap: 6px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <div class="terminal">
+
+
+        <!-- HEADER -->
+
+        <div class="header">
+
+            <span>
+                CAMPUS TERMINAL
+            </span>
+
+            <a
+                href="/logout"
+                class="logout"
+            >
+                [ LOGOUT ]
+            </a>
+
+        </div>
+
+
+        <!-- CONTENT -->
+
+        <div class="content">
+
+
+            <div class="number">
+                01 / STUDENT DASHBOARD
+            </div>
+
+
+            <h1>
+                WELCOME, {{ student[1] }}
+            </h1>
+
+
+            <p class="subtitle">
+                Your student information and leave management portal.
+            </p>
+
+
+            <!-- STUDENT INFORMATION -->
+
+            <div class="info-grid">
+
+
+                <div class="info">
+
+                    <div class="label">
+                        FULL NAME
+                    </div>
+
+                    <div class="value">
+                        {{ student[1] }}
+                    </div>
+
+                </div>
+
+
+                <div class="info">
+
+                    <div class="label">
+                        DATE OF BIRTH
+                    </div>
+
+                    <div class="value">
+                        {{ student[2] }}
+                    </div>
+
+                </div>
+
+
+                <div class="info">
+
+                    <div class="label">
+                        COURSE
+                    </div>
+
+                    <div class="value">
+                        {{ student[3] }}
+                    </div>
+
+                </div>
+
+
+                <div class="info">
+
+                    <div class="label">
+                        EMAIL
+                    </div>
+
+                    <div class="value">
+                        {{ student[4] }}
+                    </div>
+
+                </div>
+
+
+            </div>
+
+
+            <!-- LEAVE -->
+
+            <div class="section-title">
+                LEAVE MANAGEMENT
+            </div>
+
+
+            {% if leaves %}
+
+                {% for leave in leaves %}
+
+                    <div class="leave-box">
+
+                        <p>
+                            <strong>
+                                FROM:
+                            </strong>
+
+                            {{ leave[2] }}
+                        </p>
+
+                        <p>
+                            <strong>
+                                TO:
+                            </strong>
+
+                            {{ leave[3] }}
+                        </p>
+
+                        <p>
+                            <strong>
+                                REASON:
+                            </strong>
+
+                            {{ leave[4] }}
+                        </p>
+
+                        <span class="status">
+                            STATUS: {{ leave[5] }}
+                        </span>
+
+                    </div>
+
+                {% endfor %}
+
+            {% else %}
+
+                <div class="leave-box">
+
+                    <p>
+                        No leave requests found.
+                    </p>
+
+                </div>
+
+            {% endif %}
+
+
+            <a
+                href="/apply-leave"
+                class="apply"
+            >
+                [ APPLY FOR LEAVE ]
+            </a>
+
+
+        </div>
+
+
+        <!-- FOOTER -->
+
+        <div class="footer">
+
+            <span>
+                STATUS: ONLINE
+            </span>
+
+            <span>
+                STUDENT_SYS.EXE
+            </span>
+
+        </div>
+
+
+    </div>
+
+
+</body>
+
+</html>

@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Student Login</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background: #e8e5d8;
+            color: #20251d;
+            font-family: "Courier New", monospace;
+
+            min-height: 100vh;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            padding: 25px;
+        }
+
+
+        .terminal {
+            width: 100%;
+            max-width: 500px;
+
+            background: #eeeadd;
+
+            border: 2px solid #20251d;
+
+            box-shadow: 8px 8px 0 #20251d;
+        }
+
+
+        /* Header */
+
+        .header {
+            padding: 14px 18px;
+
+            border-bottom: 2px solid #20251d;
+
+            display: flex;
+            justify-content: space-between;
+
+            font-size: 12px;
+        }
+
+
+        /* Content */
+
+        .content {
+            padding: 40px;
+        }
+
+
+        .number {
+            font-size: 11px;
+
+            opacity: 0.6;
+
+            margin-bottom: 25px;
+        }
+
+
+        h1 {
+            font-size: 32px;
+
+            margin-bottom: 10px;
+        }
+
+
+        .description {
+            font-size: 13px;
+
+            line-height: 1.6;
+
+            margin-bottom: 30px;
+
+            color: #555;
+        }
+
+
+        /* Form */
+
+        label {
+            display: block;
+
+            font-size: 12px;
+
+            margin-bottom: 7px;
+        }
+
+
+        input {
+            width: 100%;
+
+            padding: 12px;
+
+            margin-bottom: 20px;
+
+            background: #f5f2e7;
+
+            border: 1px solid #20251d;
+
+            color: #20251d;
+
+            font-family: "Courier New", monospace;
+
+            font-size: 14px;
+
+            outline: none;
+        }
+
+
+        input:focus {
+            background: white;
+
+            box-shadow: 3px 3px 0 #20251d;
+        }
+
+
+        button {
+            width: 100%;
+
+            padding: 12px;
+
+            background: #20251d;
+
+            color: #eeeadd;
+
+            border: 2px solid #20251d;
+
+            font-family: "Courier New", monospace;
+
+            font-size: 13px;
+
+            cursor: pointer;
+
+            transition: 0.15s;
+        }
+
+
+        button:hover {
+            background: #eeeadd;
+
+            color: #20251d;
+        }
+
+
+        /* Bottom */
+
+        .bottom {
+            border-top: 2px solid #20251d;
+
+            padding: 15px 18px;
+
+            font-size: 11px;
+        }
+
+
+        .bottom a {
+            color: #20251d;
+
+            text-decoration: none;
+
+            border-bottom: 1px solid #20251d;
+        }
+
+
+        @media (max-width: 500px) {
+
+            .content {
+                padding: 30px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <div class="terminal">
+
+
+        <div class="header">
+
+            <span>
+                CAMPUS TERMINAL
+            </span>
+
+            <span>
+                [ LOGIN ]
+            </span>
+
+        </div>
+
+
+        <div class="content">
+
+
+            <div class="number">
+                01 / STUDENT ACCESS
+            </div>
+
+
+            <h1>
+                STUDENT LOGIN
+            </h1>
+
+
+            <p class="description">
+                Enter your registered credentials
+                to access the student portal.
+            </p>
+
+
+            <form method="POST" action="/login">
+
+
+                <label for="email">
+                    EMAIL
+                </label>
+
+                <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="student@email.com"
+                    required
+                >
+
+
+                <label for="password">
+                    PASSWORD
+                </label>
+
+                <input
+                    type="password"
+                    id="password"
+                    name="password"
+                    placeholder="••••••••"
+                    required
+                >
+
+
+                <button type="submit">
+                    [ ENTER SYSTEM ]
+                </button>
+
+
+            </form>
+
+
+        </div>
+
+
+        <div class="bottom">
+
+            NEW STUDENT?
+
+            <a href="/student-register">
+                REGISTER ACCOUNT →
+            </a>
+
+        </div>
+
+
+    </div>
+
+
+</body>
+
+</html>

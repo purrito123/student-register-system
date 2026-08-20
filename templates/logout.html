@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Logout</title>
+
+    <style>
+
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+        }
+
+        body{
+            background:#e8e5d8;
+            color:#20251d;
+            font-family:"Courier New", monospace;
+            min-height:100vh;
+
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            padding:25px;
+        }
+
+        .terminal{
+            width:100%;
+            max-width:650px;
+            background:#eeeadd;
+            border:2px solid #20251d;
+            box-shadow:8px 8px 0 #20251d;
+        }
+
+        .header{
+            display:flex;
+            justify-content:space-between;
+            padding:14px 18px;
+            border-bottom:2px solid #20251d;
+            font-size:12px;
+        }
+
+        .content{
+            padding:45px 35px;
+            text-align:center;
+        }
+
+        .code{
+            font-size:11px;
+            opacity:.6;
+            margin-bottom:25px;
+        }
+
+        .icon{
+            font-size:42px;
+            margin-bottom:20px;
+        }
+
+        h1{
+            font-size:34px;
+            margin-bottom:15px;
+            letter-spacing:-1px;
+        }
+
+        .message{
+            color:#555;
+            line-height:1.7;
+            font-size:13px;
+            margin-bottom:30px;
+        }
+
+        .terminal-box{
+            border:1px dashed #20251d;
+            padding:18px;
+            text-align:left;
+            font-size:12px;
+            line-height:1.8;
+            margin-bottom:30px;
+            background:#f6f3e8;
+        }
+
+        .buttons{
+            display:flex;
+            justify-content:center;
+            gap:10px;
+            flex-wrap:wrap;
+        }
+
+        .button{
+            text-decoration:none;
+            border:1px solid #20251d;
+            color:#20251d;
+            padding:10px 16px;
+            font-size:11px;
+            transition:.15s;
+        }
+
+        .button:hover{
+            background:#20251d;
+            color:#eeeadd;
+        }
+
+        .primary{
+            background:#20251d;
+            color:#eeeadd;
+        }
+
+        .primary:hover{
+            background:#eeeadd;
+            color:#20251d;
+        }
+
+        .footer{
+            border-top:2px solid #20251d;
+            padding:12px 18px;
+            display:flex;
+            justify-content:space-between;
+            font-size:10px;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<div class="terminal">
+
+    <div class="header">
+        <span>CAMPUS TERMINAL</span>
+        <span>[ SHUTDOWN ]</span>
+    </div>
+
+    <div class="content">
+
+        <div class="code">
+            SYSTEM / SESSION / TERMINATED
+        </div>
+
+        <div class="icon">
+            [ ✓ ]
+        </div>
+
+        <h1>LOGOUT COMPLETE</h1>
+
+        <p class="message">
+            Your session has been securely terminated.<br>
+            Thank you for using the Campus Management System.
+        </p>
+
+        <div class="terminal-box">
+            {'>'} Closing student/admin session... OK<br>
+            {'>'} Clearing authentication token... OK<br>
+            {'>'} Disconnecting from CAMPUS_SYS.EXE... OK<br>
+            {'>'} Returning to idle state...
+        </div>
+
+        <div class="buttons">
+
+            <a href="/" class="button primary">
+                [ HOME ]
+            </a>
+
+            <a href="/login" class="button">
+                [ STUDENT LOGIN ]
+            </a>
+
+            <a href="/admin-login" class="button">
+                [ ADMIN LOGIN ]
+            </a>
+
+        </div>
+
+    </div>
+
+    <div class="footer">
+        <span>STATUS: OFFLINE</span>
+        <span>CAMPUS_SYS.EXE</span>
+    </div>
+
+</div>
+
+</body>
+</html>

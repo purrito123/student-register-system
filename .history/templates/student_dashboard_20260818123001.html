@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Dashboard</title>
+</head>
+
+<body>
+
+    <h1>Student Dashboard</h1>
+
+    <h2>Welcome, {{ student[1] }}!</h2>
+
+    <p>Name: {{ student[1] }}</p>
+    <p>Date of Birth: {{ student[2] }}</p>
+    <p>Course: {{ student[3] }}</p>
+    <p>Email: {{ student[4] }}</p>
+    <br>
+
+<a href="/logout">
+    <button>Logout</button>
+    <br><br>
+
+<a href="/apply-leave">
+    <button>Apply for Leave</button>
+    <hr>
+
+<h2>My Leave Requests</h2>
+
+{% if leaves %}
+
+    {% for leave in leaves %}
+
+        <div>
+
+            <p>
+                <strong>Start Date:</strong>
+                {{ leave[1] }}
+            </p>
+
+            <p>
+                <strong>End Date:</strong>
+                {{ leave[2] }}
+            </p>
+
+            <p>
+                <strong>Reason:</strong>
+                {{ leave[3] }}
+            </p>
+
+            <p>
+                <strong>Status:</strong>
+                {{ leave[4] }}
+            </p>
+
+        </div>
+
+        <hr>
+
+    {% endfor %}
+
+{% else %}
+
+    <p>You have not submitted any leave requests.</p>
+
+{% endif %}
+</a>
+</a>
+
+</body>
+</html>
